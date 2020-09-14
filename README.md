@@ -1,3 +1,2 @@
-# finascarr.github.io
-Personal work/research webpage. </br>
-https://finascarr.com
+# https://finascarr.com
+Personal work/research webpage.
