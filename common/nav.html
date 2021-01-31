@@ -1,0 +1,33 @@
+<nav class='navbar navbar-expand-md py-3 navbar-dark bg-dark fixed-top'>
+    <b><a class='navbar-brand'>FM</a></b>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class='collapse navbar-collapse' id='navbarLinks'>
+        <ul class='navbar-nav mr-auto'>
+            <li id='nav_' class='nav-item'>
+                <a class='nav-link' href='/'>
+                    Home
+                </a>
+            </li>
+            <li id='nav_research' class='nav-item'>
+                <a class='nav-link' href='/research.html'>
+                    Research
+                </a>
+            </li>
+            <li id='nav_contact' class='nav-item'>
+                <a class='nav-link' href='/contact.html'>
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script type='text/javascript'>
+    $(function(){
+        var nav_path = (window.location.pathname.split("/")[1].split('.')[0]);
+        $('#nav_' + nav_path).addClass('active');
+    });
+</script>
