@@ -1,2 +1,2 @@
 # https://finlaymacklon.com
-Personal work/research webpage.
+Bio & contact info
