@@ -5,67 +5,64 @@
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta content="utf-8" http-equiv="encoding">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home | Finlay Macklon</title>
+  <title>Finlay Macklon</title>
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico"/>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" 
         rel="stylesheet">
   <link rel="stylesheet" href="css/mystyles.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+  <script type='text/javascript'
+          src="https://code.jquery.com/jquery-3.5.1.min.js"
           integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
           crossorigin="anonymous">
   </script>
-  <script type='text/javascript'>
-    $(function() {
-        $(".menu").find("a").click(function() {
-            $(".menu").find("a").toggleClass("is-active", false)
-            $(this).toggleClass("is-active");
-        });
-        $("#back_to_top").click(function(){
-            $(".menu").find("a").toggleClass("is-active", false)
-        })
-    });
-  </script>
+  <!-- <script type='text/javascript' src="/js/main.js"></script> -->
 </head>
 <body>
-  <div class="section columns">
+  <div class="section columns is-mobile">
     <div class="column is-one-fifth">
-      <aside class="menu">
+      <aside id="menu_main" class="menu">
+        <input hidden id="menu_main_select" value="profile">
         <p class="menu-label">
           About Me
         </p>
         <ul class="menu-list">
-          <li><a href="#profile">Profile</a></li>
+          <li><a href="#profile" id="menu-top"">Profile</a></li>
           <li><a href="#experience">Work Experience</a></li>
           <li><a href="#education">Education</a></li>
         </ul>
-        <!-- <p class="menu-label">
+        <p class="menu-label">
           Research
         </p>
         <ul class="menu-list">
           <li>
-            <a>Interests</a>
+            <a href="#interests">Interests</a>
             <ul>
-              <li><a>Automated QA</a></li>
-              <li><a>User Feedback</a></li>
+              <li>
+                <a href="#interests" data-target="#automated_qa">Automated QA</a>
+              </li>
+              <li>
+                <a href="#interests" data-target="#user_feedback">User Feedback</a>
+              </li>
             </ul>
           </li>
-          <li><a>Publications <p>(Coming soon)</p></a></li>
+          <li><a>Publications<p>(coming soon)</p></a></li>
         </ul>
         <p class="menu-label">
           Other Info
         </p>
         <ul class="menu-list">
           <li><a>Contact</a></li>
-          <li><a>Resume/CV</a></li>
-        </ul> -->
+          <li><a>Links</a></li>
+          <!-- <li><a>Resume/CV</a></li> -->
+        </ul>
       </aside>
     </div>
     <div class="column">
       <div id="content" class="container">
         <div class="block">
-          <div class="columns">
-            <div class="column is-one-third" >
+          <div id="profile" class="columns is-desktop">
+            <div class="column is-one-quarter mr-5" >
               <figure class="image" style="width:200px">
                 <img src="img/profile.jpg" class="is-rounded is-1-by-1">
               </figure> 
@@ -77,25 +74,113 @@
               <p class="subtitle">
                 MSc Student in Software Engineering and Intelligent Systems
               </p>
-              <p id="profile">
-                Currently an MSc student in the Analytics of Software, GAmes And Repository Data (<a href='https://asgaard.ece.ualberta.ca/' target='_blank'>ASGAARD</a>) lab, supervised by Dr Cor-Paul Bezemer at the University of Alberta. 
+              <p>
+                Currently an MSc student in the Analytics of Software, GAmes And Repository Data 
+                (<a href='https://asgaard.ece.ualberta.ca/' target='_blank'>ASGAARD</a>) lab, 
+                supervised by Dr Cor-Paul Bezemer at the University of Alberta. 
                 I am passionate about leveraging AI to solve software engineering problems.
                 Outside of software engineering research, I enjoy skiing, hiking, and gaming.
               </p>
             </div>
           </div>
         </div>
-        <div class="block">
+        <div id="about_me" class="block">
           <div class="box">
             <p id="experience" class="is-size-5 mb-2">Work Experience</p>
-            <p class="mb-2">Engineering Co-op Student, ATCO Pipelines (Sept. 2018 - Aug. 2019)</p>
-            <p>Software Development Intern, Virtual Materials Group Inc. (May - Dec. 2017)</p>
+            <p class="mb-2">
+              Engineering Co-op Student, 
+              ATCO Pipelines (Sept. 2018 - Aug. 2019)
+            </p>
+            <p>
+              Software Development Intern, 
+              Virtual Materials Group Inc. (May - Dec. 2017)
+            </p>
           </div>
           <div class="box">
             <p id="education" class="is-size-5 mb-4">Education</p>
-            <p class="mb-2">MSc Software Engineering and Intelligent Systems, University of Alberta (2020 - Present)</p>
-            <p>BSc Electrical Engineering (Cooperative Program), University of Alberta (2015 - 2020)</p>
+            <p class="mb-2">
+              MSc Software Engineering and Intelligent Systems, 
+              University of Alberta (2020 - Present)
+            </p>
+            <p>
+              BSc Electrical Engineering (Cooperative Program), 
+              University of Alberta (2015 - 2020)
+            </p>
           </div>
+        </div>
+        <div id="research" class="block">
+          <div id="interests" class="box">
+            <p class="is-size-5 mb-4">Research Interests</p>
+              <div id="interests_tabs" class="tabs">
+                <ul>
+                  <li>
+                    <a data-target="#automated_qa">Automated QA</a>
+                  </li>
+                  <li>
+                    <a data-target="#user_feedback">User Feedback</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="interests_contents">
+                <div id="automated_qa" class="content">
+                  <p>
+                    Leveraging AI to automate the testing of games and software is an exciting 
+                    topic that I am currently investigating.
+                  </p>
+                </div>
+                <div id="user_feedback" class="content" hidden>
+                  <p>
+                    Online distribution platforms such as 
+                    <a href="https://store.steampowered.com/reviews/" target="_blank">Steam</a>                     
+                    include ridiculously large amounts of user review data. I am currently working 
+                    to understand how game developers can utilize such review data more effectively.
+                  </p>
+                </div>
+              </div>
+            <p class="mb-2">
+
+            </p>
+          </div>
+          <div class="box">
+            <p id="publications" class="is-size-5 mb-4">Publications (coming soon)</p>
+            <p class='is-size-7'></p>
+          </div>
+        </div>
+        <div id="other_info" class="block">
+          <div id="contact" class="box">
+            <p class="is-size-5 mb-4">Contact Information</p>
+            <div class="block">
+                <b>Email:</b>
+                <input hidden> mack<input hidden>lon [a<input hidden>t] ualbe<input hidden>rta.ca
+            </div>
+          </div>
+          <div id="links" class="box">
+            <p class="is-size-5 mb-4">Links</p>
+            <div class="block">
+              <div class="tabs is-toggle">
+                <ul>
+                  <li>
+                    <a href="https://www.linkedin.com/in/finlaymacklon/" target="_blank">
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/finlaymacklon" target="_blank">
+                      GitHub
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://asgaard.ece.ualberta.ca/" target="_blank">
+                      ASGAARD
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="box">
+            <p id="resume_cv" class="is-size-5 mb-4">Resume/CV</p>
+          </div> -->
         </div>
       </div>
     </div>
@@ -104,7 +189,7 @@
     <div class="content has-text-centered">
       <nav class="level is-mobile">
         <div class="level-item has-text-centered">
-            <a id="back_to_top" class="button" href='#'>Back to top</a>
+            <a id="back_to_top" class="button is-link" href='#'>Back to top</a>
         </div>
         </div>
       </nav>
