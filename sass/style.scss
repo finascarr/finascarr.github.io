@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+// Import font
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+// Set colors
+$darkest: #1c513c;
+$dark: #297657;
+$light: #39a67a;
+$very-light: #34956e58;
+$lightest: #2d82602b;
+
+// Update Bulma's global variables
+$family-sans-serif: "Oxygen", sans-serif;
+$grey-dark: $darkest;
+$grey-light: $very-light;
+$primary: $dark;
+$link: $light;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $lightest;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// .menu {
+//     border:1px solid #2d82602b; 
+//     padding: 10px; 
+//     border-radius: 20px;
+// }
+
+// import bulma
+@import "../node_modules/bulma/bulma.sass";

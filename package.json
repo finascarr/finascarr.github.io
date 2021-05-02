@@ -1,15 +1,15 @@
 {
-  "name": "mybulma",
+  "name": "finlaymacklon",
   "version": "1.0.0",
-  "main": "sass/mystyles.scss",
+  "main": "sass/style.scss",
   "license": "MIT",
+  "scripts": {
+    "css-build": "node-sass --omit-source-map-url sass/style.scss css/style.css",
+    "css-watch": "npm run css-build -- --watch",
+    "start": "npm run css-watch"
+  },
   "devDependencies": {
     "bulma": "^0.9.2",
     "node-sass": "^5.0.0"
-  },
-  "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
-    "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
   }
 }
